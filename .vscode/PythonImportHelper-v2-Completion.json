@@ -1,0 +1,123 @@
+[
+    {
+        "label": "Process",
+        "importPath": "multiprocessing",
+        "description": "multiprocessing",
+        "isExtraImport": true,
+        "detail": "multiprocessing",
+        "documentation": {}
+    },
+    {
+        "label": "Process",
+        "importPath": "multiprocessing",
+        "description": "multiprocessing",
+        "isExtraImport": true,
+        "detail": "multiprocessing",
+        "documentation": {}
+    },
+    {
+        "label": "Pool",
+        "importPath": "multiprocessing",
+        "description": "multiprocessing",
+        "isExtraImport": true,
+        "detail": "multiprocessing",
+        "documentation": {}
+    },
+    {
+        "label": "Process",
+        "importPath": "multiprocessing",
+        "description": "multiprocessing",
+        "isExtraImport": true,
+        "detail": "multiprocessing",
+        "documentation": {}
+    },
+    {
+        "label": "Queue",
+        "importPath": "multiprocessing",
+        "description": "multiprocessing",
+        "isExtraImport": true,
+        "detail": "multiprocessing",
+        "documentation": {}
+    },
+    {
+        "label": "os",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "os",
+        "description": "os",
+        "detail": "os",
+        "documentation": {}
+    },
+    {
+        "label": "time",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "time",
+        "description": "time",
+        "detail": "time",
+        "documentation": {}
+    },
+    {
+        "label": "saludar",
+        "kind": 2,
+        "importPath": "parte1.Ejemplo",
+        "description": "parte1.Ejemplo",
+        "peekOfCode": "def saludar(nombre : str) -> None:\n    print(f\"[HIJO] Hola {nombre}. PID = {os.getpid()}\")\nif __name__ == \"__main__\":\n    print(f\"[PADRE] PID={os.getpid()}\")\n    p = Process(target=saludar, args=(\"Manuel\",))\n    p.start()\n    p.join()\n    print(\"[PADRE] El proceso ha terminado\")",
+        "detail": "parte1.Ejemplo",
+        "documentation": {}
+    },
+    {
+        "label": "sumarNumeros",
+        "kind": 2,
+        "importPath": "parte1.Ejercicio01",
+        "description": "parte1.Ejercicio01",
+        "peekOfCode": "def sumarNumeros(numero : int) -> None:\n    i = 1\n    resultado = 0\n    for i in range (numero + 1):\n        resultado = resultado + i\n    print(resultado)\ndef main():\n    pass\nif __name__ == \"__main__\":\n    p1 = Process(target=sumarNumeros, args=(10,))",
+        "detail": "parte1.Ejercicio01",
+        "documentation": {}
+    },
+    {
+        "label": "main",
+        "kind": 2,
+        "importPath": "parte1.Ejercicio01",
+        "description": "parte1.Ejercicio01",
+        "peekOfCode": "def main():\n    pass\nif __name__ == \"__main__\":\n    p1 = Process(target=sumarNumeros, args=(10,))\n    p2 = Process(target=sumarNumeros, args=(15,))\n    p1.start()\n    p2.start()\n    p1.join()\n    p2.join()\n    print(\"El programa ha terminado\")",
+        "detail": "parte1.Ejercicio01",
+        "documentation": {}
+    },
+    {
+        "label": "sumarNumeros",
+        "kind": 2,
+        "importPath": "parte1.Ejercicio02",
+        "description": "parte1.Ejercicio02",
+        "peekOfCode": "def sumarNumeros(numero : int) -> int:\n    i = 1\n    resultado = 0\n    for i in range (numero + 1):\n        resultado = resultado + i\n    return resultado\ndef main():\n    pass\nif __name__ == \"__main__\":\n    inicio = time.perf_counter()",
+        "detail": "parte1.Ejercicio02",
+        "documentation": {}
+    },
+    {
+        "label": "main",
+        "kind": 2,
+        "importPath": "parte1.Ejercicio02",
+        "description": "parte1.Ejercicio02",
+        "peekOfCode": "def main():\n    pass\nif __name__ == \"__main__\":\n    inicio = time.perf_counter()\n    with Pool(processes=3) as pool:\n        numeros = [10, 15, 20]\n        results = pool.map(sumarNumeros, numeros)\n    fin = time.perf_counter()\n    tiempo = fin - inicio\n    print(f\"Proceso terminado {results}\")",
+        "detail": "parte1.Ejercicio02",
+        "documentation": {}
+    },
+    {
+        "label": "sumarNumeros",
+        "kind": 2,
+        "importPath": "parte1.Ejercicio03",
+        "description": "parte1.Ejercicio03",
+        "peekOfCode": "def sumarNumeros(cola):\n    while True:\n        numero = cola.get()\n        i = 1\n        resultado = 0\n        for i in range (numero + 1):\n            resultado = resultado + i\n        print(resultado)\ndef leerFichero(cola):\n    with open(\"coño/Ejercicio03.txt\", \"r\") as archivo:",
+        "detail": "parte1.Ejercicio03",
+        "documentation": {}
+    },
+    {
+        "label": "leerFichero",
+        "kind": 2,
+        "importPath": "parte1.Ejercicio03",
+        "description": "parte1.Ejercicio03",
+        "peekOfCode": "def leerFichero(cola):\n    with open(\"coño/Ejercicio03.txt\", \"r\") as archivo:\n        for linea in archivo:\n            numero = int(linea.strip())  # Convertir a entero\n            print(f\"Leyendo número: {numero}\")\n            cola.put(numero)  # Añadir a la cola\n    cola.put(None)  # Señal de que terminó de leer\n    print(\"Fichero leído completamente\")\nif __name__ == \"__main__\":\n    # Crear la cola compartida",
+        "detail": "parte1.Ejercicio03",
+        "documentation": {}
+    }
+]
