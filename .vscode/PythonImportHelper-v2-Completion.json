@@ -107,7 +107,7 @@
         "kind": 2,
         "importPath": "parte1.Ejercicio03",
         "description": "parte1.Ejercicio03",
-        "peekOfCode": "def sumarNumeros(cola):\n    while True:\n        numero = cola.get()\n        i = 1\n        resultado = 0\n        for i in range (numero + 1):\n            resultado = resultado + i\n        print(resultado)\ndef leerFichero(cola):\n    with open(\"coño/Ejercicio03.txt\", \"r\") as archivo:",
+        "peekOfCode": "def sumarNumeros(cola):\n    terminado = False\n    while not terminado:\n        numero = cola.get()\n        if numero is None:\n            terminado = True\n        else:\n            resultado = 0\n            for i in range(numero + 1):\n                resultado += i",
         "detail": "parte1.Ejercicio03",
         "documentation": {}
     },
@@ -116,7 +116,7 @@
         "kind": 2,
         "importPath": "parte1.Ejercicio03",
         "description": "parte1.Ejercicio03",
-        "peekOfCode": "def leerFichero(cola):\n    with open(\"coño/Ejercicio03.txt\", \"r\") as archivo:\n        for linea in archivo:\n            numero = int(linea.strip())  # Convertir a entero\n            print(f\"Leyendo número: {numero}\")\n            cola.put(numero)  # Añadir a la cola\n    cola.put(None)  # Señal de que terminó de leer\n    print(\"Fichero leído completamente\")\nif __name__ == \"__main__\":\n    # Crear la cola compartida",
+        "peekOfCode": "def leerFichero(cola):\n    with open(\"Ejercicio03.txt\", \"r\") as archivo:\n        for linea in archivo:\n            numero = int(linea.strip())\n            print(f\"Leyendo número: {numero}\")\n            cola.put(numero)\n    cola.put(None)\nif __name__ == \"__main__\":\n    inicio = time.perf_counter()\n    cola = Queue()",
         "detail": "parte1.Ejercicio03",
         "documentation": {}
     }
